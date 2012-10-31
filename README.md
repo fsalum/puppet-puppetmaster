@@ -1,5 +1,6 @@
 Puppet Master Module for Puppet
 ===============================
+[![Build Status](https://secure.travis-ci.org/fsalum/puppet-puppetmaster.png)](http://travis-ci.org/fsalum/puppet-puppetmaster)
 
 Use this module to deploy a puppetmaster server via 'puppet apply' command and
 avoid using a few manual steps.
