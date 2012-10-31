@@ -1,6 +1,6 @@
-# == Class: puppetmaster 
+# == Class: puppetmaster
 #
-# This class installs and configures Puppet Master 
+# This class installs and configures Puppet Master
 #
 # === Parameters
 #
@@ -14,10 +14,10 @@
 #   Specify the service enable state. Defaults to 'true'. Possible value is 'false'.
 #
 # [*puppetmaster_server*]
-#   Specify the Puppet Master server name. 
+#   Specify the Puppet Master server name.
 #
 # [*puppetmaster_certname*]
-#   Specify the Puppet Master certificate name. It is usually the server hostname. 
+#   Specify the Puppet Master certificate name. It is usually the server hostname.
 #
 # [*puppetmaster_report*]
 #   Send reports after every transction. Defaults to 'true'. Possible value is 'false'.
@@ -72,7 +72,7 @@ class puppetmaster (
   $puppetmaster_reporturl            = '',
   $puppetmaster_facts_terminus       = '',
   $puppetmaster_modulepath           = ''
-) { 
+) {
 
   include puppetmaster::params
 

@@ -1,5 +1,5 @@
 node 'puppet' {
-  class { puppetmaster:
+  class { 'puppetmaster':
     puppetmaster_report               => 'true',
     puppetmaster_autosign             => 'true',
     puppetmaster_reports              => 'store, http',
