@@ -84,12 +84,16 @@ class puppetmaster (
     notify  => Service[$puppetmaster_service_name],
   }
 
-  service { $puppetmaster_service_name:
-    ensure     => $puppetmaster_service_ensure,
-    enable     => $puppetmaster_service_enable,
-    hasrestart => true,
-    hasstatus  => true,
-    require    => Package[$puppetmaster_package_name],
+  # We will need to restart the puppet master service if certain config
+  # files are changed, so here we make sure it's in the catalog.
+  if ! defined(Service[$puppetmaster_service_name]) {
+    service { $puppetmaster_service_name:
+      ensure     => $puppetmaster_service_ensure,
+      enable     => $puppetmaster_service_enable,
+      hasrestart => true,
+      hasstatus  => true,
+      require    => Package[$puppetmaster_package_name],
+    }
   }
 
   Ini_setting {
