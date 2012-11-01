@@ -1,6 +1,6 @@
-# Class: newrelic::params
+# Class: puppetmaster::params
 #
-# This class configures parameters for the puppet-newrelic module.
+# This class configures parameters for the puppet-puppetmaster module.
 #
 # Parameters:
 #

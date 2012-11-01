@@ -11,5 +11,5 @@ env:
   - PUPPET_VERSION=3.0.1
   - PUPPET_VERSION=2.7.19
 notifications:
-  email: false
+  email: fsalum@gmail.com
 gemfile: Gemfile
