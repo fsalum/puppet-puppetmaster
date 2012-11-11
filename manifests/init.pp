@@ -81,7 +81,6 @@ class puppetmaster (
 
   package { $puppetmaster_package_name:
     ensure  => $puppetmaster_package_ensure,
-    notify  => Service[$puppetmaster_service_name],
   }
 
   service { $puppetmaster_service_name:
