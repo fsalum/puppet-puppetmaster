@@ -47,7 +47,7 @@ Include the following in your master.pp if you plan to install puppetmaster with
 And run: 
 
 ```bash
-$ puppet apply --modulepath /etc/puppet/modules master.pp'
+$ puppet apply --modulepath /etc/puppet/modules master.pp
 ```
 
 Parameters
