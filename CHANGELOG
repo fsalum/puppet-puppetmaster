@@ -1,3 +1,5 @@
+2013-10-31 - Felipe Salum <fsalum@gmail.com> - 0.0.4
+* Same as 0.0.3, typo
 2013-10-31 - Felipe Salum <fsalum@gmail.com> - 0.0.3
 * Fixed puppetlabs-release package name
 * Moving from cprice404-inifile to puppetlabs-inifile dependency
