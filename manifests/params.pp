@@ -17,9 +17,9 @@ class puppetmaster::params {
       $puppetmaster_package_name  = 'puppet-server'
       $puppetmaster_service_name  = 'puppetmaster'
       $puppetmaster_passenger_package = 'puppetmaster-passenger'
-      package { 'puppetlabs-release-6-6.noarch.rpm':
+      package { 'puppetlabs-release':
         ensure   => present,
-        source   => 'http://yum.puppetlabs.com/el/6/products/x86_64/puppetlabs-release-6-6.noarch.rpm',
+        source   => "http://yum.puppetlabs.com/el/6/products/x86_64/puppetlabs-release-${puppetmaster::puppetmaster_repo_version}.noarch.rpm",
         provider => rpm,
       }
     }
