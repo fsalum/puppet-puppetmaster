@@ -1,3 +1,6 @@
+2014-02-17 - Felipe Salum <fsalum@gmail.com> - 0.0.5
+* Updated puppetlabs yum repo
+* Added dependency on stdlib
 2013-10-31 - Felipe Salum <fsalum@gmail.com> - 0.0.4
 * Same as 0.0.3, typo
 2013-10-31 - Felipe Salum <fsalum@gmail.com> - 0.0.3

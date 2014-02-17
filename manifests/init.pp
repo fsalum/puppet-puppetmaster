@@ -72,7 +72,6 @@ class puppetmaster (
   $puppetmaster_reporturl            = '',
   $puppetmaster_facts_terminus       = '',
   $puppetmaster_modulepath           = '',
-  $puppetmaster_repo_version         = '6-7',
 ) {
 
   include puppetmaster::params

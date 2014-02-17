@@ -1,5 +1,5 @@
 name    'fsalum-puppetmaster'
-version '0.0.4'
+version '0.0.5'
 source 'git://github.com/fsalum/puppet-puppetmaster.git'
 author 'Felipe Salum'
 license 'Apache License, Version 2.0'
@@ -9,3 +9,4 @@ project_page 'https://github.com/fsalum/puppet-puppetmaster'
 
 ## Add dependencies, if any:
 dependency 'puppetlabs/inifile', '>= 1.0.0'
+dependency 'puppetlabs/stdlib', '>= 1.0.0'

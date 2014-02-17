@@ -8,7 +8,7 @@ avoid using a few manual steps.
 Requirements
 ------------
 
-It requires the PuppetLabs Repository added before using the module. Use:
+It requires the PuppetLabs Repository added before using the module on Debian systems. Use:
 
 ```bash
 $ puppet module install puppetlabs-apt
