@@ -1,3 +1,5 @@
+2014-04-12 - Felipe Salum <fsalum@gmail.com> - 0.0.6
+* Moved from operatingsystem to osfamily
 2014-02-17 - Felipe Salum <fsalum@gmail.com> - 0.0.5
 * Updated puppetlabs yum repo
 * Added dependency on stdlib

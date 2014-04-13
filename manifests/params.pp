@@ -12,8 +12,8 @@
 #
 class puppetmaster::params {
 
-  case $::operatingsystem {
-    'centos', 'redhat', 'fedora': {
+  case $::osfamily {
+    'RedHat': {
       $puppetmaster_package_name  = 'puppet-server'
       $puppetmaster_service_name  = 'puppetmaster'
       $puppetmaster_passenger_package = 'puppetmaster-passenger'
@@ -25,7 +25,7 @@ class puppetmaster::params {
         }
       }
     }
-    'ubuntu', 'debian': {
+    'Debian': {
       $puppetmaster_package_name  = 'puppetmaster'
       $puppetmaster_service_name  = 'puppetmaster'
       $puppetmaster_passenger_package = 'puppetmaster-passenger'
