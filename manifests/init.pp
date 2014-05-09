@@ -37,6 +37,9 @@
 # [*puppetmaster_modulepath*]
 #   Defines the module path.
 #
+# [*puppetmaster_templatepath*]
+#   Defines the template path.
+#
 # === Variables
 #
 # === Examples
@@ -72,6 +75,7 @@ class puppetmaster (
   $puppetmaster_reporturl            = '',
   $puppetmaster_facts_terminus       = '',
   $puppetmaster_modulepath           = '',
+  $puppetmaster_templatepath         = '',
 ) {
 
   include puppetmaster::params
@@ -105,6 +109,14 @@ class puppetmaster (
       section => 'main',
       setting => 'modulepath',
       value   => $puppetmaster_modulepath,
+    }
+  }
+
+  if ($puppetmaster_templatepath) {
+    ini_setting { 'puppetmaster_templatepath':
+      section => 'main',
+      setting => 'templatepath',
+      value   => $puppetmaster_templatepath,
     }
   }
 
