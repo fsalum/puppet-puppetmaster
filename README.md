@@ -99,6 +99,10 @@ You can also set some extra parameters to enable or disable a few options:
 
    Defines the module path.
 
+* `puppetmaster_templatepath`
+
+   Defines the template path.
+
 Author
 ------
 Felipe Salum <fsalum@gmail.com>
