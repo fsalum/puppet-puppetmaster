@@ -83,7 +83,7 @@ class puppetmaster (
   $puppetmaster_packages_name = $puppetmaster::params::puppetmaster_packages_name
   $puppetmaster_service_name = $puppetmaster::params::puppetmaster_service_name
 
-  package { $puppetmaster_package_name:
+  package { $puppetmaster_packages_name:
     ensure  => $puppetmaster_package_ensure,
   }
 
