@@ -80,7 +80,7 @@ class puppetmaster (
 
   include puppetmaster::params
 
-  $puppetmaster_package_name = $puppetmaster::params::puppetmaster_package_name
+  $puppetmaster_packages_name = $puppetmaster::params::puppetmaster_packages_name
   $puppetmaster_service_name = $puppetmaster::params::puppetmaster_service_name
 
   package { $puppetmaster_package_name:
