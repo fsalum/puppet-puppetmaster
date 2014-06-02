@@ -14,7 +14,7 @@ class puppetmaster::params {
 
   case $::osfamily {
     'RedHat': {
-      $puppetmaster_package_name  = 'puppet-server'
+      $puppetmaster_packages_name  = [ 'puppet-server' ]
       $puppetmaster_service_name  = 'puppetmaster'
       $puppetmaster_passenger_package = 'puppetmaster-passenger'
       if ! defined(Package['puppetlabs-release']) {
@@ -26,7 +26,7 @@ class puppetmaster::params {
       }
     }
     'Debian': {
-      $puppetmaster_package_name  = 'puppetmaster'
+      $puppetmaster_packages_name  = [ 'puppetmaster', 'puppetmaster-common' ]
       $puppetmaster_service_name  = 'puppetmaster'
       $puppetmaster_passenger_package = 'puppetmaster-passenger'
     }
