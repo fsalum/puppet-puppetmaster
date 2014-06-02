@@ -95,7 +95,7 @@ class puppetmaster (
       enable     => $puppetmaster_service_enable,
       hasrestart => true,
       hasstatus  => true,
-      require    => Package[$puppetmaster_package_name],
+      require    => Package[$puppetmaster_packages_name],
     }
   }
 
