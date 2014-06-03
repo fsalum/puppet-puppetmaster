@@ -20,7 +20,7 @@ class puppetmaster::params {
       if ! defined(Package['puppetlabs-release']) {
         package { 'puppetlabs-release':
           ensure   => present,
-          source   => "http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm",
+          source   => 'http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm',
           provider => rpm,
         }
       }
