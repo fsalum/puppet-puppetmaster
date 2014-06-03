@@ -1,3 +1,5 @@
+2014-06-03 - Romuald du Song <romuald.dusong@deveryware.com> - 0.0.8
+* Allow specifying an array of modules instead of one module for puppetmaster service.
 2014-05-09 - Ryan Peck <iamreck@gmail.com>   - 0.0.7
 * Added templatepath configuration option
 2014-04-12 - Felipe Salum <fsalum@gmail.com> - 0.0.6

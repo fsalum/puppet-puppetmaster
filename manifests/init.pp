@@ -47,8 +47,8 @@
 #  class { puppetmaster:
 #    puppetmaster_server               => 'puppet1.puppet.test',
 #    puppetmaster_certname             => 'puppet1.puppet.test',
-#    puppetmaster_report               => 'true',
-#    puppetmaster_autosign             => 'true',
+#    puppetmaster_report               => true,
+#    puppetmaster_autosign             => true,
 #    puppetmaster_reports              => 'store, http',
 #    puppetmaster_reporturl            => 'http://puppet1.puppet.test:8080/reports/upload',
 #    puppetmaster_facts_terminus       => 'PuppetDB',
@@ -66,11 +66,11 @@
 class puppetmaster (
   $puppetmaster_package_ensure       = 'present',
   $puppetmaster_service_ensure       = 'running',
-  $puppetmaster_service_enable       = 'true',
+  $puppetmaster_service_enable       = true,
   $puppetmaster_server               = '',
   $puppetmaster_certname             = '',
-  $puppetmaster_report               = 'true',
-  $puppetmaster_autosign             = 'false',
+  $puppetmaster_report               = true,
+  $puppetmaster_autosign             = false,
   $puppetmaster_reports              = '',
   $puppetmaster_reporturl            = '',
   $puppetmaster_facts_terminus       = '',
@@ -80,10 +80,10 @@ class puppetmaster (
 
   include puppetmaster::params
 
-  $puppetmaster_package_name = $puppetmaster::params::puppetmaster_package_name
+  $puppetmaster_packages_name = $puppetmaster::params::puppetmaster_packages_name
   $puppetmaster_service_name = $puppetmaster::params::puppetmaster_service_name
 
-  package { $puppetmaster_package_name:
+  package { $puppetmaster_packages_name:
     ensure  => $puppetmaster_package_ensure,
   }
 
@@ -95,7 +95,7 @@ class puppetmaster (
       enable     => $puppetmaster_service_enable,
       hasrestart => true,
       hasstatus  => true,
-      require    => Package[$puppetmaster_package_name],
+      require    => Package[$puppetmaster_packages_name],
     }
   }
 
