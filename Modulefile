@@ -1,5 +1,5 @@
 name    'fsalum-puppetmaster'
-version '0.0.7'
+version '0.0.8'
 source 'git://github.com/fsalum/puppet-puppetmaster.git'
 author 'Felipe Salum'
 license 'Apache License, Version 2.0'
