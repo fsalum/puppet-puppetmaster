@@ -43,6 +43,9 @@
 # [*puppetmaster_environmentpath*]
 #   Defines the environment path.
 #
+# [*puppetmaster_hiera_config*]
+#   Defines the path to the hiera configuration file.
+#
 # === Variables
 #
 # === Examples
@@ -80,6 +83,7 @@ class puppetmaster (
   $puppetmaster_modulepath           = '',
   $puppetmaster_templatepath         = '',
   $puppetmaster_environmentpath      = '',
+  $puppetmaster_hiera_config         = '',
 ) {
 
   include puppetmaster::params
@@ -129,6 +133,14 @@ class puppetmaster (
       section => 'main',
       setting => 'environmentpath',
       value   => $puppetmaster_environmentpath,
+    }
+  }
+
+  if ($puppetmaster_hiera_config) {
+    ini_setting { 'puppetmaster_hiera_config':
+      section => 'main',
+      setting => 'hiera_config',
+      value   => $puppetmaster_hiera_config,
     }
   }
 
