@@ -40,6 +40,9 @@
 # [*puppetmaster_templatepath*]
 #   Defines the template path.
 #
+# [*puppetmaster_environmentpath*]
+#   Defines the environment path.
+#
 # === Variables
 #
 # === Examples
@@ -76,6 +79,7 @@ class puppetmaster (
   $puppetmaster_facts_terminus       = '',
   $puppetmaster_modulepath           = '',
   $puppetmaster_templatepath         = '',
+  $puppetmaster_environmentpath      = '',
 ) {
 
   include puppetmaster::params
@@ -117,6 +121,14 @@ class puppetmaster (
       section => 'main',
       setting => 'templatepath',
       value   => $puppetmaster_templatepath,
+    }
+  }
+
+  if ($puppetmaster_environmentpath) {
+    ini_setting { 'puppetmaster_environmentpath':
+      section => 'main',
+      setting => 'environmentpath',
+      value   => $puppetmaster_environmentpath,
     }
   }
 
