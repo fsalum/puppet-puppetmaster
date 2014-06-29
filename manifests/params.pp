@@ -16,7 +16,6 @@ class puppetmaster::params {
     'RedHat': {
       $puppetmaster_packages_name = [ 'puppet-server' ]
       $puppetmaster_service_name  = 'puppetmaster'
-      $puppetmaster_passenger_package = 'puppetmaster-passenger'
       if ! defined(Package['puppetlabs-release']) {
         package { 'puppetlabs-release':
           ensure   => present,
@@ -28,7 +27,6 @@ class puppetmaster::params {
     'Debian': {
       $puppetmaster_packages_name = [ 'puppetmaster', 'puppetmaster-common' ]
       $puppetmaster_service_name  = 'puppetmaster'
-      $puppetmaster_passenger_package = 'puppetmaster-passenger'
     }
     default: {
       fail("Unsupported osfamily: ${::osfamily} operatingsystem: ${::operatingsystem}, module ${module_name} only support osfamily RedHat and Debian")

@@ -8,7 +8,9 @@ avoid using a few manual steps.
 Requirements
 ------------
 
-It requires the PuppetLabs Repository added before using the module on Debian systems. Use:
+It requires the PuppetLabs Repository added before using the module.
+
+For *Debian* systems:
 
 ```bash
 $ puppet module install puppetlabs-apt
@@ -23,6 +25,30 @@ And then add data below to your node resource:
         key_server => 'pgp.mit.edu',
       }
 
+For *RHEL* systems:
+
+      yumrepo {
+      'puppetlabs-products':
+        name           => 'puppetlabs-products',
+        descr          => 'Puppet Labs Products El 6 - $basearch',
+        baseurl        => 'http://yum.puppetlabs.com/el/6/products/$basearch',
+        priority       => '5',
+        failovermethod => 'priority',
+        enabled        => '1',
+        gpgcheck       => '1',
+        gpgkey         => 'http://yum.puppetlabs.com/RPM-GPG-KEY-puppetlabs';
+       'puppetlabs-deps':
+        name           => 'puppetlabs-deps',
+        descr          => 'Puppet Labs Dependencies El 6 - $basearch',
+        baseurl        => 'http://yum.puppetlabs.com/el/6/dependencies/$basearch',
+        priority       => '5',
+        failovermethod => 'priority',
+        enabled        => '1',
+        gpgcheck       => '1',
+        gpgkey         => 'http://yum.puppetlabs.com/RPM-GPG-KEY-puppetlabs';
+     }
+
+
 Quick Start
 -----------
 
@@ -32,9 +58,7 @@ $ puppet module install fsalum-puppetmaster
 
 Include the following in your master.pp if you plan to install puppetmaster with passenger:
 
-         package { 'puppetmaster-passenger': 
-           ensure => installed, 
-         }
+         include apache::mod::passenger
 
          class { puppetmaster:
            puppetmaster_service_ensure       => 'stopped',
