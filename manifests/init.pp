@@ -46,6 +46,9 @@
 # [*puppetmaster_hiera_config*]
 #   Defines the path to the hiera configuration file.
 #
+# [*puppetmaster_parser*]
+#   Defines the puppet parser to use.
+#
 # === Variables
 #
 # === Examples
@@ -59,6 +62,7 @@
 #    puppetmaster_reporturl            => 'http://puppet1.puppet.test:8080/reports/upload',
 #    puppetmaster_facts_terminus       => 'PuppetDB',
 #    puppetmaster_modulepath           => '$confdir/modules:$confdir/modules-0',
+#    puppetmaster_parser               => 'future',
 #  }
 #
 # === Authors
@@ -84,6 +88,7 @@ class puppetmaster (
   $puppetmaster_templatepath         = '',
   $puppetmaster_environmentpath      = '',
   $puppetmaster_hiera_config         = '',
+  $puppetmaster_parser               = '',
 ) {
 
   include puppetmaster::params
@@ -197,6 +202,14 @@ class puppetmaster (
       section => 'master',
       setting => 'facts_terminus',
       value   => $puppetmaster_facts_terminus,
+    }
+  }
+
+  if ($puppetmaster_parser) {
+    ini_setting { 'puppetmaster_parser':
+      section => 'master',
+      setting => 'parser',
+      value   => $puppetmaster_parser,
     }
   }
 
